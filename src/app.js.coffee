@@ -154,7 +154,7 @@ redis_sub_client.on "message", (channel, msg_data)->
     io.to(room).emit(msg.event, msg, buffer)
   else
     io.to(room).emit(msg.event, msg)
-  console.log("Handling model.updated message from redis") if debug_mode
+  console.log("Handling #{channel} message from redis") if debug_mode
 
 redis_sub_client.on 'ready', ->
   redis_sub_client.subscribe("model.updated")
@@ -197,7 +197,7 @@ io.on 'connection', (socket)->
     try 
       authorizeScope(scope, sauth)
       socket.join(scope)
-      console.log "Handling subscription to #{channel_name}" if debug_mode
+      console.log "Handling subscription to #{scope}" if debug_mode
     catch ex
       console.error ex
 

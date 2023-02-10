@@ -3,12 +3,13 @@
   "version": "0.0.1",
   "description": "my first socket.io app",
   "dependencies": {
+    "coffeescript": "^2.7.0",
+    "cors": "~2.7.1",
     "express": "~4.17.1",
-    "socket.io": "~1.4.5",
     "redis": "~2.5.2",
-    "cors": "~2.7.1"
+    "socket.io": "~1.4.5"
   },
   "scripts": {
-    "start": "coffee src/app.js.coffee"
+    "start": "npx coffee src/app.js.coffee"
   }
 }
