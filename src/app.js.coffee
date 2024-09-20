@@ -5,7 +5,7 @@ cors = require('cors')
 io = require('socket.io')(http)
 redis = require('redis')
 
-redis_url = process.env.REDIS_URL
+redis_url = process.env.LIVESITE_REDIS_URL || process.env.REDIS_URL
 debug_mode = process.env.LIVESITE_DEBUG == 'true'
 require_authentication = process.env.LIVESITE_AUTHENTICATED == 'true'
 redis_sub_client = redis.createClient(redis_url)
